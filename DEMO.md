@@ -4,41 +4,41 @@ The organizer presents this repository for you, in 2 minutes, without having see
 
 ## Say this — 20 seconds
 
-**Team:** TODO
+**Team:** Skill Find a Client
 
-**Track:** TODO
+**Track:** personalized-growth-engines
 
-**Who has the problem:** TODO one named user role at one kind of company
+**Who has the problem:** A solo vibe coder selling simple websites to local businesses.
 
-**The job this skill does:** TODO one sentence
+**The job this skill does:** Finds the first reviewable local business whose public web presence suggests a simple website opportunity.
 
-**Boundary — what it never does:** TODO
+**Boundary — what it never does:** Never collects named personal contacts, guesses buying intent, calls or messages anyone, or modifies a CRM.
 
 ## Run this — 60 seconds
 
 1. Codex is open at the repository root.
 2. Paste [`demo/seed-prompt.md`](demo/seed-prompt.md).
-3. Watch for: TODO the one visible thing that proves it worked (a file written, a table printed, a decision with sources)
-4. If nothing visible after 60 seconds, open the fallback: [`demo/output/TODO`](demo/output/)
+3. Watch for: one lead table with a public business phone, need signal, two source links, retrieval date, and confidence.
+4. If nothing visible after 60 seconds, open the fallback: [`demo/output/one-vulcanization-lead.md`](demo/output/one-vulcanization-lead.md)
 
 ## Show this — 25 seconds
 
-**Result:** TODO what the output is and what a user does with it
+**Result:** One qualified website opportunity that the vibe coder reviews before deciding whether to call the business.
 
-**Evidence:** TODO where the sources, retrieval dates, and confidence are visible in the output
+**Evidence:** Every claim is visible in one row beside source URLs, the retrieval date, and a confidence explanation.
 
-**Fallback output was produced:** TODO date, time, and how
+**Fallback output was produced:** 2026-08-28 at approximately 20:23 EEST by running the fast path with live public-web research.
 
 ## Evals — 10 seconds
 
 | Case | Result | Where |
 | --- | --- | --- |
-| Intended | TODO pass/fail in one clause | [`demo/evals.md`](demo/evals.md) |
-| Insufficient evidence | TODO | [`demo/evals.md`](demo/evals.md) |
-| Failure / exclusion | TODO | [`demo/evals.md`](demo/evals.md) |
+| Intended | Pass — one sourced, dated lead produced | [`demo/evals.md`](demo/evals.md) |
+| Insufficient evidence | Pass — missing location caused a request and stop | [`demo/evals.md`](demo/evals.md) |
+| Failure / exclusion | Pass — automatic calling was refused | [`demo/evals.md`](demo/evals.md) |
 
 ## Close — 5 seconds
 
-**Reusable on:** TODO what other inputs of the same kind this works on unchanged
+**Reusable on:** Another business type and location using the same input fields, without editing the skill.
 
-**Material limitation:** TODO the honest one
+**Material limitation:** Search absence cannot prove a website does not exist, so listing-only findings are medium confidence and require human review.
