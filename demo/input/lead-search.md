@@ -1,7 +1,7 @@
 # Representative lead search
 
-- business_type: independent tyre repair and vulcanization shops
-- location: Bucharest, Romania
+- business_type: any independent local business
+- location: Romania
 - target_count: 1
 - max_candidates_to_check: 3
 - research_time_budget_seconds: 45
