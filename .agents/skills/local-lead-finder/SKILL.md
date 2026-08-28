@@ -8,8 +8,24 @@ description: Finds local-business sales opportunities for a simple brochure webs
 ## Input
 
 Read the prompt-named Markdown input containing `business_type`, `location`,
-`target_count`, `offer`, and optionally `existing_leads_file`. Ask for any missing
-business type or location and stop. Default the target count to 10.
+`target_count`, `offer`, and optionally `existing_leads_file`,
+`max_candidates_to_check`, and `research_time_budget_seconds`. Ask for any missing
+business type or location and stop. Default the target count to 1.
+
+## Fast mode
+
+When `target_count` is 1, use this bounded path instead of broad research:
+
+1. Read exclusions, then search one public business-directory results page.
+2. Check at most `max_candidates_to_check` candidates, defaulting to 3.
+3. Consider only `listing-only` or `social-only` candidates. Skip website-upgrade
+   audits. `listing-only` means the public listing has no owned-domain link.
+4. For each candidate, perform at most one exact-name or phone web search to check
+   for an owned domain and verify the public business phone.
+5. Stop immediately after the first qualifying, non-excluded lead. Do not inspect or
+   rank more candidates.
+6. Stop when `research_time_budget_seconds` (default 45) is reached. Write an honest
+   insufficient-evidence result rather than continuing.
 
 ## Steps
 
@@ -27,6 +43,8 @@ business type or location and stop. Default the target count to 10.
    other personal data. Exclude a candidate when a business-level phone cannot be
    verified.
 5. Inspect the candidate's web presence and assign exactly one need signal:
+   - `listing-only`: a public business listing has no business-owned website link and
+     one exact-name or phone search does not surface an owned domain;
    - `no standalone website`: no business-owned website is found after checking the
      listing and searching the exact business name;
    - `social-only`: the business listing points only to a public social page;
